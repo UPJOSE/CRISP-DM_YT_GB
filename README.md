@@ -26,15 +26,15 @@ CRISP_DM_GB/
 │
 ├── notebooks/
 │   ├── upc_2026_01_16310_grupo1.ipynb  # Notebook de referencia del grupo
-│   ├── 01_business_understanding.ipynb
-│   ├── 02_data_loading.ipynb
-│   ├── 03_data_quality.ipynb
-│   ├── 04_exploratory_analysis.ipynb
-│   ├── 05_feature_engineering.ipynb
-│   ├── 06_business_questions.ipynb
-│   ├── 07_modeling.ipynb
-│   ├── 08_evaluation.ipynb
-│   └── 09_requirements_compliance.ipynb  # Verificación de los 9 requerimientos
+│   ├── 01_comprension_negocio.ipynb      # Fase 1
+│   ├── 02_comprension_datos.ipynb        # Fase 2 (recolección, descripción, inspección)
+│   ├── 03_visualizacion_datos.ipynb      # Fase 2.3
+│   ├── 04_calidad_datos.ipynb             # Fase 2.4
+│   ├── 05_preparacion_datos.ipynb         # Fase 3 (feature engineering)
+│   ├── 06_requerimientos.ipynb            # Fase 3.4 (9 preguntas de negocio)
+│   ├── 07_modelado_evaluacion.ipynb       # Fase 4 (modelado + evaluación)
+│   ├── 08_conclusiones.ipynb              # Fase 5
+│   └── 09_verificacion_cumplimiento.ipynb # Verificación automática de requerimientos
 │
 ├── reports/
 │   └── figures/                      # Figuras exportadas por los notebooks
@@ -52,31 +52,33 @@ CRISP_DM_GB/
 
 | Fase | Notebook | Descripción |
 |------|----------|-------------|
-| 1. Business Understanding | `01_business_understanding.ipynb` | Objetivos, KPIs, hipótesis |
-| 2. Data Understanding | `02_data_loading.ipynb` + `03_data_quality.ipynb` | Carga, EDA univariado, calidad |
-| 3. Data Preparation | `04_exploratory_analysis.ipynb` + `05_feature_engineering.ipynb` | Limpieza, variables derivadas |
-| 4. Modeling | `07_modeling.ipynb` | Entrenamiento y comparación de modelos |
-| 5. Evaluation | `08_evaluation.ipynb` | Métricas, bias-variance, interpretabilidad |
-| 6. Deployment / Insights | `06_business_questions.ipynb` | Respuesta a requerimientos del cliente |
-| ✅ Verificación | `09_requirements_compliance.ipynb` | Comprueba los 9 requerimientos + cobertura de fases |
+| 1. Comprensión del negocio | `01_comprension_negocio.ipynb` | Objetivos, KPIs, hipótesis, variables dependientes/independientes |
+| 2. Comprensión de los datos | `02_comprension_datos.ipynb` | Recolección, descripción, inspección |
+| 2.3. Exploración de los datos | `03_visualizacion_datos.ipynb` | Carga, inspección y visualización (histogramas, boxplots, correlaciones, bivariado) |
+| 2.4. Verificación de calidad | `04_calidad_datos.ipynb` | Nulos, duplicados, inconsistencias, outliers |
+| 3. Preparación de datos | `05_preparacion_datos.ipynb` | Limpieza, nuevas variables, encoding, escalado, selección |
+| 3.4. Requerimientos | `06_requerimientos.ipynb` | Respuesta a los 9 requerimientos del cliente |
+| 4. Modelado y evaluación | `07_modelado_evaluacion.ipynb` | Técnica, plan de prueba, modelos, métricas, residuos, learning curve |
+| 5. Conclusiones | `08_conclusiones.ipynb` | Conclusiones de negocio, técnicas, limitaciones, trabajo futuro |
+| ✅ Verificación | `09_verificacion_cumplimiento.ipynb` | Comprueba los 9 requerimientos + cobertura de fases |
 
 ---
 
 ## ✅ Mapeo de Requerimientos (TB2)
 
-Cada requerimiento se responde con **visualización + tabla**. La verificación automática está en `09_requirements_compliance.ipynb` (genera `data/processed/matriz_cumplimiento.csv`).
+Cada requerimiento se responde con **visualización + tabla**. La verificación automática está en `09_verificacion_cumplimiento.ipynb` (genera `data/processed/matriz_cumplimiento.csv`).
 
 | # | Requerimiento | Notebook |
 |---|---------------|----------|
-| 1 | Categorías de mayor tendencia | `06` / `09` |
-| 2 | Categorías que más y menos gustan | `06` / `09` |
-| 3 | Mejor ratio Me gusta / No me gusta | `06` / `09` |
-| 4 | Mejor ratio Vistas / Comentarios | `06` / `09` |
-| 5 | Cambio del volumen en tendencia en el tiempo | `06` / `09` |
-| 6 | Canales más y menos frecuentes | `06` / `09` |
-| 7 | Estados con más Vistas, Me gusta y No me gusta | `06` / `09` |
-| 8 | ¿Comentarios positivos? (proxy: sentimiento del título) | `06` / `09` |
-| 9 | Factibilidad de predecir Vistas/Likes/Dislikes | `07` · `08` / `09` |
+| 1 | Categorías de mayor tendencia | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 2 | Categorías que más y menos gustan | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 3 | Mejor ratio Me gusta / No me gusta | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 4 | Mejor ratio Vistas / Comentarios | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 5 | Cambio del volumen en tendencia en el tiempo | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 6 | Canales más y menos frecuentes | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 7 | Estados con más Vistas, Me gusta y No me gusta | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 8 | ¿Comentarios positivos? (proxy: sentimiento del título) | `06_requerimientos` / `09_verificacion_cumplimiento` |
+| 9 | Factibilidad de predecir Vistas/Likes/Dislikes | `07_modelado_evaluacion` / `09_verificacion_cumplimiento` |
 
 ---
 
@@ -158,7 +160,7 @@ pip install pandas numpy scikit-learn matplotlib seaborn xgboost vaderSentiment
 # Opcionales para P7 (mapa) y P8 (sentimiento alternativo): folium textblob
 ```
 
-Los archivos del dataset (`GBvideos_cc50_202101.csv` y `GB_category_id.json`) ya están en `data/`. Ejecuta los notebooks en orden numérico (01 → 08).
+Los archivos del dataset (`GBvideos_cc50_202101.csv` y `GB_category_id.json`) ya están en `data/`. Ejecuta los notebooks en orden numérico (01 → 09).
 
 ---
 
