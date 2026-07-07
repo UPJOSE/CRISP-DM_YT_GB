@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data (raw files are kept locally; see data/README_data.md)
+# Si deseas versionar datos pequeños, comenta las líneas siguientes.
+# data/raw/*.csv
+# data/raw/*.json
+# data/raw/*.parquet
+# data/processed/*.csv
+# data/processed/*.parquet
+
+# Reports / figures
+reports/*.pdf
+reports/*.html
+reports/figures/*.png
+reports/figures/*.jpg
+reports/figures/*.svg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
