@@ -25,7 +25,6 @@ CRISP_DM_GB/
 │   └── README_data.md                # Descripción del dataset
 │
 ├── notebooks/
-│   ├── upc_2026_01_16310_grupo1.ipynb  # Notebook de referencia del grupo
 │   ├── 01_comprension_negocio.ipynb      # Fase 1
 │   ├── 02_comprension_datos.ipynb        # Fase 2 (recolección, descripción, inspección)
 │   ├── 03_visualizacion_datos.ipynb      # Fase 2.3
