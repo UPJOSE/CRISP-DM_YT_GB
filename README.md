@@ -33,7 +33,8 @@ CRISP_DM_GB/
 │   ├── 05_feature_engineering.ipynb
 │   ├── 06_business_questions.ipynb
 │   ├── 07_modeling.ipynb
-│   └── 08_evaluation.ipynb
+│   ├── 08_evaluation.ipynb
+│   └── 09_requirements_compliance.ipynb  # Verificación de los 9 requerimientos
 │
 ├── reports/
 │   └── figures/                      # Figuras exportadas por los notebooks
@@ -57,6 +58,25 @@ CRISP_DM_GB/
 | 4. Modeling | `07_modeling.ipynb` | Entrenamiento y comparación de modelos |
 | 5. Evaluation | `08_evaluation.ipynb` | Métricas, bias-variance, interpretabilidad |
 | 6. Deployment / Insights | `06_business_questions.ipynb` | Respuesta a requerimientos del cliente |
+| ✅ Verificación | `09_requirements_compliance.ipynb` | Comprueba los 9 requerimientos + cobertura de fases |
+
+---
+
+## ✅ Mapeo de Requerimientos (TB2)
+
+Cada requerimiento se responde con **visualización + tabla**. La verificación automática está en `09_requirements_compliance.ipynb` (genera `data/processed/matriz_cumplimiento.csv`).
+
+| # | Requerimiento | Notebook |
+|---|---------------|----------|
+| 1 | Categorías de mayor tendencia | `06` / `09` |
+| 2 | Categorías que más y menos gustan | `06` / `09` |
+| 3 | Mejor ratio Me gusta / No me gusta | `06` / `09` |
+| 4 | Mejor ratio Vistas / Comentarios | `06` / `09` |
+| 5 | Cambio del volumen en tendencia en el tiempo | `06` / `09` |
+| 6 | Canales más y menos frecuentes | `06` / `09` |
+| 7 | Estados con más Vistas, Me gusta y No me gusta | `06` / `09` |
+| 8 | ¿Comentarios positivos? (proxy: sentimiento del título) | `06` / `09` |
+| 9 | Factibilidad de predecir Vistas/Likes/Dislikes | `07` · `08` / `09` |
 
 ---
 
